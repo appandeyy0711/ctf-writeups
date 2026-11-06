@@ -37,4 +37,20 @@ THE BOOT SEQUENCE;
 
 
 ## Security link (my own thought)
-Why would an attacker want to target the boot process?
+## Security Link (My Own Thoughts)
+
+### Why Would an Attacker Want to Target the Boot Process?
+
+The boot process is an attractive target for attackers because it executes before the operating system becomes fully operational.
+
+- **It runs early:** Boot components execute before many OS-level security tools, such as antivirus and EDR solutions, are fully loaded. This can give boot-level malware an opportunity to interfere with security mechanisms.
+
+- **It operates with high privileges:** Firmware and boot components operate at highly privileged execution levels. Compromising them may allow an attacker to tamper with the operating system before it starts.
+
+- **It can survive OS reinstallation:** Firmware-level malware may remain even after the operating system is wiped and reinstalled because it resides in motherboard firmware rather than ordinary disk storage.
+
+  Real-world examples include **LoJax**, the first UEFI rootkit discovered in the wild, and **BlackLotus**, a UEFI bootkit that exploited a vulnerability to bypass Secure Boot protections on vulnerable systems.
+
+- **It is difficult to detect:** Many traditional security tools focus on monitoring the running operating system and may have limited visibility into firmware-level threats.
+
+**Key takeaway:** Securing the boot process is important because compromising it can undermine the security of the operating system before the OS even starts.
